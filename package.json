@@ -4,7 +4,8 @@
   "description": "A base repository for front-end tests at MMT Digital",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "precommit": "lint-staged",
+    "test": "jest",
     "start": "node -r babel-register node_modules/webpack-dev-server/bin/webpack-dev-server.js --hot --inline --config config/webpack/webpack.config.js"
   },
   "repository": {
@@ -30,17 +31,19 @@
     "babel-plugin-transform-react-constant-elements": "^6.23.0",
     "babel-plugin-transform-react-jsx": "^6.24.1",
     "babel-plugin-transform-react-remove-prop-types": "^0.4.8",
-    "babel-preset-env": "^1.6.0",
+    "babel-preset-env": "^1.6.1",
     "babel-register": "^6.26.0",
     "clean-webpack-plugin": "^0.1.16",
     "copy-webpack-plugin": "^4.2.0",
     "cross-env": "^5.0.5",
     "css-loader": "^0.28.7",
+    "enzyme": "^3.3.0",
     "extract-text-webpack-plugin": "^3.0.0",
     "file-loader": "^0.11.2",
     "friendly-errors-webpack-plugin": "^1.6.1",
     "html-loader": "^0.5.1",
     "img-loader": "^2.0.0",
+    "install": "^0.11.0",
     "node-sass": "^4.5.3",
     "postcss-loader": "^2.0.6",
     "postcss-scss": "^1.0.2",
@@ -53,9 +56,23 @@
     "webpack-merge": "^4.1.0"
   },
   "dependencies": {
+    "babel-jest": "^22.4.3",
+    "babel-preset-react": "^6.24.1",
+    "enzyme-adapter-react-16": "^1.1.1",
     "http-server": "^0.10.0",
+    "husky": "^0.14.3",
+    "jest": "^22.4.3",
     "jquery": "^3.2.1",
+    "lint-staged": "^7.0.0",
+    "prettier": "^1.11.1",
     "react": "^16.2.0",
-    "react-dom": "^16.2.0"
+    "react-dom": "^16.2.0",
+    "react-test-renderer": "^16.2.0"
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,json,css}": [
+      "prettier --single-quote --write",
+      "git add"
+    ]
   }
 }

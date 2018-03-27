@@ -14,5 +14,5 @@
 ### Approach
 
 * I have decided to build this basket using React as it is prefered by MMT over jquery. 
-* I have never used react before so first I decided to make practice app [learn-react]("https://github.com/reenz/learn-react" ) the TDD style to get the hang of it. While doing pratice app I faced some issues like running the tests and running the server which was not addressed in the tutorial so googled it and manged to make small 'Hello World' react app.
+* I have never used react before so first I decided to make practice app [learn-react](https://github.com/reenz/learn-react ) the TDD style to get the hang of it. While doing pratice app I faced some issues like running the tests and running the server which was not addressed in the tutorial so googled it and manged to make small 'Hello World' react app.
 * I will take first first two user stories to get started.
