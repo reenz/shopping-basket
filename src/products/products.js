@@ -4,17 +4,7 @@ class Products extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      data: [
-        {
-          name: 'Mountain Dew'
-        },
-        {
-          name: 'Desperados'
-        },
-        {
-          name: 'Jack Daniels'
-        }
-      ]
+      data: props.productList || []
     };
   }
 

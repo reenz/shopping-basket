@@ -1,6 +1,12 @@
 import React, { Component } from 'react';
 import Products from './products/products.js';
 
+const productList = [
+  { name: 'Mountain Dew' },
+  { name: 'Desperados' },
+  { name: 'Jack Daniels' }
+];
+
 class App extends Component {
   render() {
     return (
@@ -9,7 +15,7 @@ class App extends Component {
           <h2>Basket</h2>
         </div>
         <div>
-          <Products />
+          <Products productList={productList} />
         </div>
       </div>
     );

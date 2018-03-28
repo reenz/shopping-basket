@@ -19,3 +19,6 @@
 
 ### Test Dependencies
 * jest ,babel-jest, babel-preset-env, babel-preset-react,react-test-renderer,enzyme ,enzyme-adapter-react-16
+
+### Findings
+* To make the component reusable,component should be parametrized by passing the data from outside the component(i.e I removed the hard coded product data from Product component)

@@ -5,9 +5,38 @@ configure({ adapter: new Adapter() });
 
 import Adapter from 'enzyme-adapter-react-16';
 
-describe('Products', () => {
+describe('Products table', () => {
   it('renders the name of the products in basket', () => {
     const wrapper = shallow(<Products />);
     expect(wrapper.exists(<table classname="product-table" />)).toBe(true);
+  });
+});
+
+describe('Products table content', () => {
+  let wrapper;
+  let productList = [];
+
+  beforeEach(() => {
+    productList = [
+      {
+        name: 'Item1'
+      },
+      {
+        name: 'Item2'
+      }
+    ];
+    wrapper = shallow(<Products productList={productList} />);
+  });
+
+  it('should include the name of each item', () => {
+    productList.forEach(product => {
+      expect(wrapper.containsMatchingElement(<td>{product.name}</td>)).toBe(
+        true
+      );
+    });
+  });
+
+  it('should render corresponding number of table rows', () => {
+    expect(wrapper.find('tbody > tr').length).toEqual(2);
   });
 });
