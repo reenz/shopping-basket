@@ -11,6 +11,23 @@
 **When** I view the page  
 **Then** I can see all added items and their cost  
 
+*Basket-002*  
+**As a** user  
+**I want** to change the quantity of a basket item  
+**So that** I can decide item totals before purchasing  
+
+**Given** I am on the basket page  
+**When** I view the page  
+**Then** I can see an item quantity next to each item  
+
+**Given** I am on the basket page  
+**When** I view the page  
+**Then** I can see each item's total cost (adjusted for quantity)  
+
+**Given** I am on the basket page  
+**When** I change an item quantity  
+**Then** the item's total cost is adjusted, in real-time  
+
 ### Approach
 
 * I have decided to build this basket using React as it is prefered by MMT over jquery. 
