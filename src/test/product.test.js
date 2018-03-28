@@ -20,14 +20,20 @@ describe('Products table content', () => {
     productList = [
       {
         name: 'Item1',
-        price: 2
+        price: 2,
+        quantity: 3
       },
       {
         name: 'Item2',
-        price: 2
+        price: 2,
+        quantity: 2
       }
     ];
     wrapper = shallow(<Products productList={productList} />);
+  });
+
+  it('should render corresponding number of table rows', () => {
+    expect(wrapper.find('tbody > tr').length).toEqual(2);
   });
 
   it('should include the name of each item', () => {
@@ -38,18 +44,51 @@ describe('Products table content', () => {
     });
   });
 
-  it('should render corresponding number of table rows', () => {
-    expect(wrapper.find('tbody > tr').length).toEqual(2);
-  });
-
   it('should include the price of each item', () => {
     productList.forEach(product => {
-      console.log(product.price);
-      console.log(wrapper.html());
-
       expect(wrapper.containsMatchingElement(<td>${product.price}</td>)).toBe(
         true
       );
     });
+  });
+
+  it('should include the price of each item', () => {
+    productList.forEach(product => {
+      expect(
+        wrapper.containsMatchingElement(
+          <td>
+            <input value={product.quantity} />
+          </td>
+        )
+      ).toBe(true);
+    });
+  });
+});
+
+describe('Products table content', () => {
+  let wrapper;
+  let productList = [];
+
+  beforeEach(() => {
+    productList = [
+      {
+        name: 'Item1',
+        price: 2,
+        quantity: 3
+      }
+    ];
+    wrapper = shallow(<Products productList={productList} />);
+  });
+
+  it('should item', () => {
+    const evtValue = {
+      target: {
+        id: '0',
+        name: 'qty',
+        value: '4'
+      }
+    };
+    wrapper.find('.quantity').simulate('change', evtValue);
+    expect(wrapper.state().data[0].quantity).toEqual(4);
   });
 });
