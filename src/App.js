@@ -4,17 +4,17 @@ import Products from './products/products.js';
 const productList = [
   {
     name: 'Mountain Dew',
-    quantity: 0,
+    quantity: 1,
     price: 1
   },
   {
     name: 'Desperados',
-    quantity: 0,
+    quantity: 1,
     price: 3
   },
   {
     name: 'Jack Daniels',
-    quantity: 0,
+    quantity: 1,
     price: 2
   }
 ];

@@ -46,9 +46,11 @@ describe('Products table content', () => {
 
   it('should include the price of each item', () => {
     productList.forEach(product => {
-      expect(wrapper.containsMatchingElement(<td>${product.price}</td>)).toBe(
-        true
-      );
+      expect(
+        wrapper.containsMatchingElement(
+          <td>${product.price * product.quantity}</td>
+        )
+      ).toBe(true);
     });
   });
 
@@ -65,7 +67,7 @@ describe('Products table content', () => {
   });
 });
 
-describe('Products table content', () => {
+describe('When user changes', () => {
   let wrapper;
   let productList = [];
 
@@ -80,7 +82,7 @@ describe('Products table content', () => {
     wrapper = shallow(<Products productList={productList} />);
   });
 
-  it('should item', () => {
+  it('the quantity,quantity shouls be updated with new quantity', () => {
     const evtValue = {
       target: {
         id: '0',
@@ -90,5 +92,17 @@ describe('Products table content', () => {
     };
     wrapper.find('.quantity').simulate('change', evtValue);
     expect(wrapper.state().data[0].quantity).toEqual(4);
+  });
+
+  it('the quantity product price should get adjusted accordingly', () => {
+    const evtValue = {
+      target: {
+        id: '0',
+        name: 'qty',
+        value: '10'
+      }
+    };
+    wrapper.find('.quantity').simulate('change', evtValue);
+    expect(wrapper.containsMatchingElement(<td>$20</td>)).toBe(true);
   });
 });

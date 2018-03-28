@@ -30,7 +30,7 @@ class Products extends Component {
             onChange={this.handleQtyChange}
           />
         </td>
-        <td>${product.price}</td>
+        <td>${product.quantity * product.price}</td>
       </tr>
     ));
 
