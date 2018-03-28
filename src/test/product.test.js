@@ -8,6 +8,8 @@ import Adapter from 'enzyme-adapter-react-16';
 describe('Products table', () => {
   it('renders the name of the products in basket', () => {
     const wrapper = shallow(<Products />);
+    console.log(wrapper.html());
+
     expect(wrapper.exists(<table classname="product-table" />)).toBe(true);
   });
 });
@@ -33,7 +35,7 @@ describe('Products table content', () => {
   });
 
   it('should render corresponding number of table rows', () => {
-    expect(wrapper.find('tbody > tr').length).toEqual(2);
+    expect(wrapper.find('tbody > tr').length).toEqual(3);
   });
 
   it('should include the name of each item', () => {
@@ -65,6 +67,10 @@ describe('Products table content', () => {
       ).toBe(true);
     });
   });
+
+  it('calculates the total of all items', () => {
+    expect(wrapper.containsMatchingElement(<td>$ 10 </td>)).toBe(true);
+  });
 });
 
 describe('When user changes', () => {
@@ -91,7 +97,7 @@ describe('When user changes', () => {
       }
     };
     wrapper.find('.quantity').simulate('change', evtValue);
-    expect(wrapper.state().data[0].quantity).toEqual(4);
+    expect(wrapper.state().data[0].quantity).toEqual('4');
   });
 
   it('the quantity product price should get adjusted accordingly', () => {

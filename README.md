@@ -28,6 +28,15 @@
 **When** I change an item quantity  
 **Then** the item's total cost is adjusted, in real-time  
 
+*Basket-003*  
+**As a** user  
+**I want** to view my current basket total  
+**So that** I can see what I'm going to have to pay  
+
+**Given** I am on the basket page  
+**When** I view the page  
+**Then** I can see a total cost, accounting for all items and quantities  
+
 ### Approach
 
 * I have decided to build this basket using React as it is prefered by MMT over jquery. 

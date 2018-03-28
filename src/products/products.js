@@ -10,10 +10,19 @@ class Products extends Component {
   }
 
   handleQtyChange(event) {
-    let qty = Number(event.target.value);
+    let qty = event.target.value;
     const newState = this.state;
     newState.data[event.target.id].quantity = qty;
     this.setState(newState);
+  }
+
+  computeTotal() {
+    let total = this.state.data
+      .map(product => {
+        return product.price * product.quantity;
+      })
+      .reduce((a, b) => a + b, 0);
+    return total;
   }
 
   render() {
@@ -37,7 +46,12 @@ class Products extends Component {
     return (
       <div className="product-container">
         <table className="product-table">
-          <tbody>{products}</tbody>
+          <tbody>
+            {products}
+            <tr>
+              <td>$ {this.computeTotal()} </td>
+            </tr>
+          </tbody>
         </table>
       </div>
     );
