@@ -1,5 +1,6 @@
 import '@assets/favicon.ico';
 import '@styles/styles.scss';
+import '@styles/product.scss';
 
 /**
  * Welcome! This project has been setup with webpack to — hopefully —
