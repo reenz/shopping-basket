@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Products from './products/products.js';
+import './products/product.scss';
 
 const productList = [
   {
@@ -22,7 +23,7 @@ const productList = [
 class App extends Component {
   render() {
     return (
-      <div classname="app">
+      <div className="app">
         <div>
           <h2>Basket</h2>
         </div>
