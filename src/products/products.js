@@ -12,7 +12,14 @@ class Products extends Component {
     const products = this.state.data.map(product => (
       <tr key={product.name}>
         <td>{product.name}</td>
-        <td>{product.quantity}</td>
+        <td>
+          <input
+            type="text"
+            id={product.name}
+            className="quantity"
+            value={product.quantity}
+          />
+        </td>
         <td>${product.price}</td>
       </tr>
     ));

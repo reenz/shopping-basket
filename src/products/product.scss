@@ -1,5 +1,5 @@
 .app {
-    background-color: lightgrey;
+    background-color:whitesmoke;
     margin-left: 40%;
     width: fit-content;
     height: fit-content;
@@ -8,6 +8,7 @@
 
 .product-table {
     background-color:whitesmoke;
+    padding: 4px;
 }
 
 td {
@@ -16,3 +17,6 @@ td {
     border-bottom-width: 1px;
 }
 
+.quantity {
+    width: 10%;
+}
