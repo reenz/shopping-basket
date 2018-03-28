@@ -12,12 +12,14 @@ class Products extends Component {
     const products = this.state.data.map(product => (
       <tr key={product.name}>
         <td>{product.name}</td>
+        <td>{product.quantity}</td>
+        <td>${product.price}</td>
       </tr>
     ));
 
     return (
-      <div classname="product-container">
-        <table classname="product-table">
+      <div className="product-container">
+        <table className="product-table">
           <tbody>{products}</tbody>
         </table>
       </div>

@@ -19,10 +19,12 @@ describe('Products table content', () => {
   beforeEach(() => {
     productList = [
       {
-        name: 'Item1'
+        name: 'Item1',
+        price: 2
       },
       {
-        name: 'Item2'
+        name: 'Item2',
+        price: 2
       }
     ];
     wrapper = shallow(<Products productList={productList} />);
@@ -38,5 +40,16 @@ describe('Products table content', () => {
 
   it('should render corresponding number of table rows', () => {
     expect(wrapper.find('tbody > tr').length).toEqual(2);
+  });
+
+  it('should include the price of each item', () => {
+    productList.forEach(product => {
+      console.log(product.price);
+      console.log(wrapper.html());
+
+      expect(wrapper.containsMatchingElement(<td>${product.price}</td>)).toBe(
+        true
+      );
+    });
   });
 });
