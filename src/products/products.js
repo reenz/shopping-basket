@@ -49,7 +49,7 @@ class Products extends Component {
             onChange={this.handleQtyChange}
           />
         </td>
-        <td>${product.quantity * product.price}</td>
+        <td id="itemPrice">${product.quantity * product.price}</td>
       </tr>
     ));
 
@@ -58,11 +58,11 @@ class Products extends Component {
         <table className="product-table">
           <tbody>
             {products}
-            <tr>
-              <td>$ {this.computeTotal()} </td>
+            <tr className="checkout">
+              <td id="computeTotal">$ {this.computeTotal()} </td>
               <td>
                 <button id="clear" type="button" onClick={this.clear}>
-                  clear{' '}
+                  Clear
                 </button>
               </td>
             </tr>
