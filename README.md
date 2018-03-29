@@ -80,6 +80,7 @@ This is a simple React app which displays user's basket. User can alter the quan
 * Testing using Jest and Enzyme was quite new for me. I used them for the first time in this challenge and it involved lot of learning experience.
 * Overall, it was both interesting and challenging to work on this tech test. I am happy with what I achieved as part of my first cut.
 * I do realize that few more things need to happen to make this a production quality app like handling different currencies, addressing Progressive Web App checklist and so on.
+* It took me around two days to complete this task which includes learning React, Jest & Enzyme from scratch.
 
 ### Next steps
 
