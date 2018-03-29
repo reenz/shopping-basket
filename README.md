@@ -84,6 +84,7 @@ This is a simple React app which displays user's basket. User can alter the quan
 ### Next steps
 
 * Add an option of deleting a particular item
+* Add functionality to checkout button
 * Now my product data is hard-coded, if I had the time I would find a way to get live API and pull the item's content and title from that
 * More testing
 * More styling
