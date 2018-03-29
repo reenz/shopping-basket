@@ -8,8 +8,6 @@ import Adapter from 'enzyme-adapter-react-16';
 describe('Products table', () => {
   it('renders the name of the products in basket', () => {
     const wrapper = shallow(<Products />);
-    console.log(wrapper.html());
-
     expect(wrapper.exists(<table classname="product-table" />)).toBe(true);
   });
 });
@@ -70,6 +68,19 @@ describe('Products table content', () => {
 
   it('calculates the total of all items', () => {
     expect(wrapper.containsMatchingElement(<td>$ 10 </td>)).toBe(true);
+  });
+
+  it('resets to zero when user clicks clear', () => {
+    wrapper.find('#clear').simulate('click');
+    productList.forEach(product => {
+      expect(
+        wrapper.containsMatchingElement(
+          <td>
+            <input value={0} />
+          </td>
+        )
+      ).toBe(true);
+    });
   });
 });
 

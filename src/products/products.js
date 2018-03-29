@@ -4,6 +4,7 @@ class Products extends Component {
   constructor(props) {
     super(props);
     this.handleQtyChange = this.handleQtyChange.bind(this);
+    this.clear = this.clear.bind(this);
     this.state = {
       data: props.productList || []
     };
@@ -23,6 +24,15 @@ class Products extends Component {
       })
       .reduce((a, b) => a + b, 0);
     return total;
+  }
+
+  clear() {
+    this.state.data.forEach(product => {
+      product.quantity = 0;
+    });
+    const newState = this.state;
+    newState.data.quantity = 0;
+    this.setState(newState);
   }
 
   render() {
@@ -50,6 +60,11 @@ class Products extends Component {
             {products}
             <tr>
               <td>$ {this.computeTotal()} </td>
+              <td>
+                <button id="clear" type="button" onClick={this.clear}>
+                  clear{' '}
+                </button>
+              </td>
             </tr>
           </tbody>
         </table>
