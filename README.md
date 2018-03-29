@@ -4,7 +4,7 @@ This is a simple React app which displays user's basket. User can alter the quan
 
 ### Basket
 
-![Basket](./src/assets/images/basket1.png)
+![Basket](https://bitbucket.org/mmtdigital/fe-test-makers-academy-reena-sharma/src/master/src/assets/images/basket1.png)
 
 ### User Stories
 
