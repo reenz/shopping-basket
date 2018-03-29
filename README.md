@@ -37,6 +37,16 @@
 **When** I view the page  
 **Then** I can see a total cost, accounting for all items and quantities  
 
+*Basket-004*  
+**As a** user  
+**I want** to remove all items from my basket  
+**So that** I can start over  
+
+**Given** I am on the basket page  
+**When** I click the "clear" button  
+**Then** all items are reset to zero (but remain in the basket)  
+
+
 ### Approach
 
 * I have decided to build this basket using React as it is prefered by MMT over jquery. 
