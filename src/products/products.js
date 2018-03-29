@@ -65,6 +65,11 @@ class Products extends Component {
                   Clear
                 </button>
               </td>
+              <td>
+                <button id="checkout" type="button">
+                  Check Out >
+                </button>
+              </td>
             </tr>
           </tbody>
         </table>
